@@ -1,0 +1,374 @@
+/* ===== RESET & BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f2f5;
+  font-family: sans-serif;
+  color: #2b2b3b;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+svg {
+  stroke: white;
+  fill: none;
+}
+
+/* ===== VARIABLES ===== */
+:root {
+  --color-primer: #4e64df;
+  --color-secondary: #25d454;
+  --color-dark: #151523;
+  --color-light-bg: #f1f3fe;
+  --color-text-muted: #93939f;
+  --border-radius-md: 8px;
+  --border-radius-lg: 10px;
+}
+
+.pd-top {padding-top:20px;}
+.pd-bottom{padding-bottom:20px;}
+
+/* ===== BACKGROUND ===== */
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(4px);
+  transform: scale(1.1);
+  z-index: -1;
+}
+
+/* ===== LAYOUT ===== */
+.wrap,
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.container {
+  padding: 0 20px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1 {
+    font-size: 1.5em;
+}
+
+.name {
+  padding-bottom: 5px;
+  font-weight: 700;
+}
+
+/* ===== BANNER & BUTTONS ===== */
+.banner img {
+  display: block;
+}
+
+.link {
+  padding: 20px 0;
+  text-align: center;
+  background-color: var(--color-primer);
+}
+
+.link a {
+  display: inline-block;
+  height: 49px;
+  padding: 0 15px;
+  background-color: var(--color-dark);
+  border-radius: var(--border-radius-md);
+  color: #fff;
+  font-family: Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 49px;
+}
+
+.link a:hover {
+  background-color: #fff;
+  color: var(--color-dark);
+}
+
+/* ===== PRODUCTS ===== */
+.products {
+  background-color: var(--color-primer);
+  border: 10px solid var(--color-primer);
+  border-radius: var(--border-radius-lg);
+  color: #fff;
+  font-weight: 700;
+}
+
+.products img {
+  border-radius: 5px;
+}
+
+.products a {
+  margin: 12px 0 5px 0;
+  display: inline-block;
+  padding: 5px 20px;
+  background-color: var(--color-dark);
+  border-radius: var(--border-radius-lg);
+}
+
+.products a:hover {
+  background-color: var(--color-light-bg);
+  color: #fff;
+}
+
+/* ===== PRICING ===== */
+.m-design__prices {
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--color-dark);
+}
+
+.m-design__price--sale {
+  font-weight: 900;
+  color: var(--color-secondary);
+}
+
+.m-design__price--sale:hover {
+  color: var(--color-primer);
+}
+
+.m-design__price--regular {
+  position: relative;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.m-design__price--regular::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: calc(50% - 2px);
+  width: 100%;
+  height: 2px;
+  background: #ff6929;
+  animation: priceStrike 0.2s 1;
+}
+
+@keyframes priceStrike {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* ===== IKLAN SYSTEMS ===== */
+table.iklan {
+    width: 100%;
+	text-align:center;
+}
+table.iklan, td.iklan, th.iklan {
+    border-collapse: collapse;
+}
+table.iklan tr,
+table.iklan td {
+    height: auto;
+}
+table.iklan td {
+    padding: 0;
+    margin: 0;
+}
+td.satu {
+    width: 50%;
+}
+td.dua {
+    height: 80px !important;
+    background-color: var(--color-primer);
+}
+td.dua svg {
+    margin: 0 auto;
+    width: 80%;
+    height: 80px;
+    display: block;
+}
+td.satu,td.tiga, td.empat {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+td.tiga, td.empat {
+	width: 25%;
+    height: 120px !important;
+}
+td.lima {
+	padding: 10px !important;
+    height: 80px !important;
+    font-weight: 700;
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    background-color: var(--color-secondary);
+}
+td.enam {
+    padding: 20px !important;
+    background-color: var(--color-secondary);
+    font-weight: 700;
+    color: #FFFFFF;
+    font-size: 2em;
+    font-style: italic;
+}
+td.tujuh {
+}
+td.satu img,
+td.tiga img,
+td.empat img {
+    display: block;
+    object-fit: cover; /* Memotong gambar agar memenuhi area tanpa distorsi */
+}
+td.satu img {
+}
+td.tiga img,td.empat img {
+}
+
+
+
+/* Gambar di semua td memenuhi full width & height dengan crop */
+
+
+
+
+
+
+
+/* ===== GRID SYSTEMS ===== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 20px;
+  text-align: center;
+  background-color: var(--color-light-bg);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 20px;
+  text-align: center;
+}
+
+.span-3 {
+  grid-column: span 3;
+}
+
+.item img {
+    margin: 0 auto;
+}
+
+/* ===== LOGOS ===== */
+.teepublic-logo,
+.statemaybe-logo {
+  padding: 10px 0;
+}
+
+.teepublic-logo img,
+.statemaybe-logo svg {
+	width: 300px;
+    max-width: 400px;
+    display: block;
+    height: auto;
+    margin: auto;
+    padding: 5px 10px;
+}
+
+.statemaybe-logo {
+  background-color: var(--color-primer);
+}
+
+.teepublic-logo {
+  background-color: var(--color-secondary);
+}
+
+/* ===== REVIEW SECTION ===== */
+.review img {
+  width: auto !important;
+  max-height: 18px;
+}
+
+/* ===== AFFILIATE SECTION ===== */
+.affiliate img {
+  width: auto !important;
+}
+
+.affiliate .span-3 a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--color-primer);
+  border-radius: var(--border-radius-lg);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: var(--color-dark) !important;
+}
+
+footer svg {
+  padding: 8px;
+  fill: #fff;
+  width: 28px;
+  height: 28px;
+}
+
+.m-footer__social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+}
+
+.m-footer__social-links li a {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.m-footer__social-links li a:hover {
+  transform: scale(1.1);
+}
+
+.link__content {
+  display: inline;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.container.teepublic-description {
+    font-size: 0.9em;
+}
+
+.container.teepublic-address {
+    font-size: 0.7em;
+}
